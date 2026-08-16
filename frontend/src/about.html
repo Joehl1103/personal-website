@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>About</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../index.css" rel="stylesheet" />
+    <script
+      src="./components/header.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="./components/nav.js" type="text/javascript" defer></script>
+    <script
+      src="./components/footer.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="https://kit.fontawesome.com/91062a4392.js" crossorigin="anonymous"></script>
+    <style>
+      .social {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+      .icons {
+        margin-top: 16px;
+      }
+      a {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <nav-component></nav-component>
+    <div class="main">
+      <div>
+        <img src="../assets/img/hdsht.jpg" width="100"></img>
+        <p>Joey Loom Loom</p>
+      </div>
+      <div>
+        <h3>Who am I?</h3>
+        <p>Born in Uganda. Lives in TX. Works everywhere. Man of the world. A world of a man.</p>
+        <div class="social">
+          <p>find me</p>
+          <div class="icons">
+            <a href="https://www.linkedin.com/in/jkhloomis/"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://x.com/JosephLoom30487"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://github.com/Joehl1103"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-component></footer-component>
+  </body>
+</html>
