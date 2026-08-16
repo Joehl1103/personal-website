@@ -4,19 +4,25 @@
     <title>Page Title</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style></style>
     <link href="./index.css" rel="stylesheet" />
+    <script
+      src="./src/components/header.js"
+      type="text/javascript"
+      defer
+    ></script>
+    <script src="./src/components/nav.js" type="text/javascript" defer></script>
+    <script
+      src="./src/components/footer.js"
+      type="text/javascript"
+      defer
+    ></script>
   </head>
   <body>
-    <div class="navbar">
-      <a href="#">Link</a>
-      <a href="#">Link</a>
-      <a href="#">Link</a>
-      <a href="#">Link</a>
+    <nav-component></nav-component>
+    <div class="row">
+      <div class="side">...</div>
+      <div class="main">...</div>
     </div>
-    <div class="header">
-      <h1>My website</h1>
-      <p>A website created by me.</p>
-    </div>
+    <footer-component></footer-component>
   </body>
 </html>
