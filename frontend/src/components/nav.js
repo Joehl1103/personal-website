@@ -10,10 +10,10 @@ class Nav extends HTMLElement {
   render() {
     this.innerHTML = `
     <div class="navbar">
-      <a href="./src/home.html">Home</a>
-      <a href="./src/about.html">About</a>
-      <a href="./src/projects.html">Projects</a>
-      <a href="./src/blog.html">Blog</a>
+      <a href="/index.html">Home</a>
+      <a href="/src/about.html">About</a>
+      <a href="/src/projects.html">Projects</a>
+      <a href="/src/blog/index.html">Blog</a>
     </div>
   `;
   }
