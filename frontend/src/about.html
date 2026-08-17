@@ -16,7 +16,12 @@
       type="text/javascript"
       defer
     ></script>
-    <script src="https://kit.fontawesome.com/91062a4392.js" crossorigin="anonymous"></script>
+    <script
+      src="./components/socials.js"
+      type="text/javascript"
+      defer
+    ></script>
+<script src="https://kit.fontawesome.com/91062a4392.js" crossorigin="anonymous"></script>
     <style>
       .social {
         display: flex;
@@ -31,24 +36,29 @@
       }
     </style>
   </head>
-  <body>
+  <body class="wrapper">
     <nav-component></nav-component>
     <div class="main">
       <div>
         <img src="../assets/img/hdsht.jpg" width="100"></img>
-        <p>Joey Loom Loom</p>
+        <p>Joseph Loomis</p>
       </div>
       <div>
         <h3>Who am I?</h3>
-        <p>Born in Uganda. Lives in TX. Works everywhere. Man of the world. A world of a man.</p>
-        <div class="social">
-          <p>find me</p>
-          <div class="icons">
-            <a href="https://www.linkedin.com/in/jkhloomis/"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://x.com/JosephLoom30487"><i class="fa-brands fa-square-x-twitter"></i></a>
-            <a href="https://github.com/Joehl1103"><i class="fa-brands fa-github"></i></a>
-          </div>
+        <p>Born in Maine. Grew up in France. Educated in Art and Philosophy in New York and Maryland. Lives in TX.</p>
+        <h3>What do I do?</h3>
+        <p>I am a developer with a background in business operations. I fell in love with code as the best medium to improve digital systems.</p>
+        <div>
+          <h3>Stack</h3>
+          <ul>
+            <li>JavaScript, Node.js, React</li>
+            <li>Express, MongoDB, MySQL</li>
+          </ul>
         </div>
+      </div>
+      <div class="social">
+        <p>find me on </p>
+        <socials-component></socials-component>
       </div>
     </div>
     <footer-component></footer-component>
