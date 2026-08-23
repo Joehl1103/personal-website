@@ -11,7 +11,6 @@ class Nav extends HTMLElement {
     this.innerHTML = `
     <div class="navbar">
       <a href="/index.html">Home</a>
-      <a href="/src/about.html">About</a>
       <a href="/src/projects/index.html">Projects</a>
       <a href="/src/blog/index.html">Blog</a>
     </div>
