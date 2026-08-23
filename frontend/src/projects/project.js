@@ -12,22 +12,28 @@ class Project extends HTMLElement {
     this.description = this.dataset.description;
     this.stack = this.dataset.stack;
     this.codeUrl = this.dataset.codeurl;
-    console.log("this.codeUrl", this.codeUrl);
     this.demoUrl = this.dataset.demourl;
-    console.log("demoUrl", this.demoUrl);
-    const demoExists = /^http/.test(this.demoUrl);
+    let liveDemo = this.setLiveDemo(this.demoUrl);
     this.innerHTML = `
-   <li>
+    <li>
       <b>${this.title}</b>, ${this.description}</br> <i>
       ${this.stack}</i></br>
-      <a href="${this.codeUrl}">Code</a> |
-      ${
-        demoExists
-          ? `<a href="${this.demoUrl}">Live Demo</a>`
-          : `${this.demoUrl}`
-      }
+      <a href="${this.codeUrl}">Code</a>
+      ${liveDemo}
     </li>
   `;
+  }
+
+  setLiveDemo(demoUrl) {
+    const comingSoon = demoUrl === "coming soon";
+    const noDemo = demoUrl === "false";
+    if (/^https/.test(demoUrl)) {
+      return `| <a href="${demoUrl}">Live Demo</a>`;
+    } else if (comingSoon) {
+      return `| live demo coming soon`;
+    } else if (noDemo) {
+      return "";
+    }
   }
 }
 
