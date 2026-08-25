@@ -7,7 +7,8 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node live-server-config.js"
+    "dev": "node live-server-config.js",
+    "test:e2e": "npx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
