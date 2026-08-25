@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "live-server"
+    "start": "node live-server-config.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",
