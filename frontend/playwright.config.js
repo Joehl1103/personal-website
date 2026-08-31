@@ -76,7 +76,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: `npx live-server . --port=${port} --no-browser`,
+    command: `live-server . --port=${port} --entry-file=index.html`,
     url: baseURL,
     reuseExistingServer: false,
     timeout: 120 * 1000,

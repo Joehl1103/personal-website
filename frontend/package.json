@@ -7,8 +7,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev": "node live-server-config.js",
-    "test:e2e": "npx playwright test"
+    "dev": "node live-server-config.js --port=5500",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui"
   },
   "devDependencies": {
     "@playwright/test": "^1.62.1",

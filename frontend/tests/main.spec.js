@@ -1,24 +1,25 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, beforeEach } from "@playwright/test";
 
 const slices = ["", "projects", "blog"];
 
 test("expect nav and footer to be present on every page", async ({ page }) => {
   for (let i = 0; i < slices.length; i++) {
     await page.goto(`/${slices[i]}`);
-    const socialsDiv = page.getByTestId("socials");
-    expect(socialsDiv).toBeTruthy();
-    const nav = page.getByTestId("navbar");
-    expect(nav).toBeTruthy();
+    const socialsDiv = await page.getByTestId("socials");
+    await expect(socialsDiv).toBeTruthy();
+    const nav = await page.getByTestId("navbar");
+    await expect(nav).toBeTruthy();
   }
 });
 
 test("home page has headshot", async ({ page }) => {
   await page.goto("/");
-  const headshot = page.getByAltText("headshot");
-  expect(headshot).toBeTruthy();
+  const headshot = await page.getByAltText("headshot");
+  await expect(headshot).toBeTruthy();
 });
 
-test.only("all links on projects 200", async ({ page }) => {
+test("all links on projects 200", async ({ page, baseURL }) => {
+  console.log("baseURL", baseURL);
   await page.goto("/projects");
   const mainHeader = await page.getByTestId("main-header");
   await expect(mainHeader).toHaveText("Projects");
