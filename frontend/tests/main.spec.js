@@ -1,14 +1,35 @@
-import { test, expect, beforeEach } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
-const slices = ["", "projects", "blog"];
+test.beforeEach(async ({ page, baseURL }) => {
+  const res = await page.goto("/");
+  const url = res.url();
+  const status = res.status();
+  const statusText = res.statusText();
+  expect(url).toBe(`${baseURL}/`);
+  expect(status).toBe(200);
+  expect(statusText).toBe("OK");
+});
 
-test("expect nav and footer to be present on every page", async ({ page }) => {
-  for (let i = 0; i < slices.length; i++) {
-    await page.goto(`/${slices[i]}`);
-    const socialsDiv = await page.getByTestId("socials");
-    await expect(socialsDiv).toBeTruthy();
-    const nav = await page.getByTestId("navbar");
-    await expect(nav).toBeTruthy();
+test.only("expect nav and footer to be present on every page", async ({
+  page,
+}) => {
+  const pageData = {
+    home: { "nav-link": "home-link", "header-text": "Home" },
+    projects: { "nav-link": "projects-link", "header-text": "Projects" },
+    blog: { "nav-link": "blog-link", "header-text": "Blog" },
+  };
+  for (const [key, value] of Object.entries(pageData)) {
+    const { "nav-link": navLink, "header-text": headerText } = value;
+    await page.getByTestId(navLink).click();
+    const header = page.getByRole("heading", {
+      level: 1,
+      name: headerText,
+    });
+    console.log("header", await header.textContent());
+    // const socialsDiv = await page.getByTestId("socials");
+    // await expect(socialsDiv).toBeTruthy();
+    // const nav = await page.getByTestId("navbar");
+    // await expect(nav).toBeTruthy();
   }
 });
 

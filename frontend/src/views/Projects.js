@@ -12,7 +12,7 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-      <h2 data-testid="main-header">Projects</h2>
+      <h1 class="main-header" data-testid="main-header">Projects</h1>
       <div>
         <p>
           You can find my full list of projects on my

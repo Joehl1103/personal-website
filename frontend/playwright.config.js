@@ -1,8 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from "@playwright/test";
 
-const port = Number(process.env.PLAYWRIGHT_PORT ?? 5501);
-const baseURL = `http://127.0.0.1:${port}`;
+const baseURL = `http://127.0.0.1:3001`;
 
 /**
  * Read environment variables from file.
@@ -76,9 +75,12 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: `live-server . --port=${port} --entry-file=index.html`,
+    command: `PORT=3001 node server.js`,
+    cwd: "../",
     url: baseURL,
     reuseExistingServer: false,
     timeout: 120 * 1000,
+    stderr: "pipe",
+    stdout: "pipe",
   },
 });
