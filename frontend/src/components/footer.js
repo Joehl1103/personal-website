@@ -26,7 +26,7 @@ class Footer extends HTMLElement {
           }
     </style>
     <div class="footer">
-      <socials-component></socials-component>
+      <socials-component data-testid="footer-socials"></socials-component>
     </div>
   `;
   }

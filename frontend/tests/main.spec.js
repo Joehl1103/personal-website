@@ -25,11 +25,11 @@ test.only("expect nav and footer to be present on every page", async ({
       level: 1,
       name: headerText,
     });
-    console.log("header", await header.textContent());
-    // const socialsDiv = await page.getByTestId("socials");
-    // await expect(socialsDiv).toBeTruthy();
-    // const nav = await page.getByTestId("navbar");
-    // await expect(nav).toBeTruthy();
+    expect(await header.textContent()).toBe(headerText);
+    const socialsDiv = page.getByTestId("footer-socials");
+    await expect(socialsDiv).toBeVisible();
+    const nav = page.getByTestId("navbar");
+    await expect(nav).toBeVisible();
   }
 });
 
