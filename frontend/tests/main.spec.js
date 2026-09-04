@@ -10,21 +10,28 @@ test.beforeEach(async ({ page, baseURL }) => {
   expect(statusText).toBe("OK");
 });
 
-test.only("expect nav and footer to be present on every page", async ({
+test("expect heading nav and footer to be present on every page", async ({
   page,
+  baseURL,
 }) => {
   const pageData = {
-    home: { "nav-link": "home-link", "header-text": "Home" },
-    projects: { "nav-link": "projects-link", "header-text": "Projects" },
-    blog: { "nav-link": "blog-link", "header-text": "Blog" },
+    home: { "nav-link": "home-link", "header-text": "Home", route: "/" },
+    projects: {
+      "nav-link": "projects-link",
+      "header-text": "Projects",
+      route: "/projects",
+    },
+    blog: { "nav-link": "blog-link", "header-text": "Blog", route: "/blog" },
   };
+  console.log("baseURL", baseURL);
   for (const [key, value] of Object.entries(pageData)) {
-    const { "nav-link": navLink, "header-text": headerText } = value;
+    const { "nav-link": navLink, "header-text": headerText, route } = value;
     await page.getByTestId(navLink).click();
     const header = page.getByRole("heading", {
       level: 1,
       name: headerText,
     });
+    expect(page.url()).toBe(`${baseURL}${route}`);
     expect(await header.textContent()).toBe(headerText);
     const socialsDiv = page.getByTestId("footer-socials");
     await expect(socialsDiv).toBeVisible();
@@ -34,9 +41,8 @@ test.only("expect nav and footer to be present on every page", async ({
 });
 
 test("home page has headshot", async ({ page }) => {
-  await page.goto("/");
   const headshot = await page.getByAltText("headshot");
-  await expect(headshot).toBeTruthy();
+  await expect(headshot).toBeVisible();
 });
 
 test("all links on projects 200", async ({ page, baseURL }) => {
@@ -53,6 +59,6 @@ test("all links on projects 200", async ({ page, baseURL }) => {
       console.log(`No link for ${text}`);
     }
     const res = await page.request.get(href);
-    expect(res.ok()).toBeTruthy();
+    expect(res.ok()).toBe(true);
   }
 });
