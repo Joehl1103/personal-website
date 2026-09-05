@@ -1,6 +1,6 @@
-import Home from "/frontend/src/views/Home.js";
-import Projects from "/frontend/src/views/Projects.js";
-import Blog from "/frontend/src/views/Blog.js";
+import Home from "/src/views/Home.js";
+import Projects from "/src/views/Projects.js";
+import Blog from "/src/views/Blog.js";
 
 // NOTE: unnecessariy at the moment but I will have to figure out how to parse a url with multiple slashes and an id and return the url with the id once I have multiple elements linked on a single page.
 // function getParams(match) {
@@ -49,6 +49,7 @@ async function router() {
 }
 
 async function navigateTo(url) {
+  console.log("url", url);
   history.pushState(null, null, url);
   router();
 }
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
+      console.log("here");
       navigateTo(e.target.href);
     }
   });

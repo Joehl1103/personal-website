@@ -7,7 +7,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node live-server-config.js --port=5500",
+    "dev": "nodemon server.js",
     "test:e2e": "npx playwright test",
     "test:e2e:ui": "npx playwright test --ui"
   },
@@ -16,6 +16,8 @@
     "@types/node": "^26.2.0"
   },
   "dependencies": {
-    "live-server": "^1.2.2"
+    "express": "^5.2.1",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.14"
   }
 }
