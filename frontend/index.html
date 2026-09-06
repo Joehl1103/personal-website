@@ -5,27 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <link href="/index.css" rel="stylesheet" />
-    <script
-      src="/src/components/footer.js"
-      type="text/javascript"
-      defer
-    ></script>
-    <script src="/src/components/socials.js" type="text/javascript"></script>
     <script
       src="https://kit.fontawesome.com/91062a4392.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/src/components/project.js" type="text/javascript"></script>
   </head>
   <body class="wrapper">
-    <div data-testid="navbar" class="navbar">
-      <a href="/" data-link data-testid="home-link">Home</a>
-      <a href="/projects" data-link data-testid="projects-link">Projects</a>
-      <a href="/blog" data-link data-testid="blog-link">Blog</a>
-    </div>
+    <nav-component></nav-component>
     <div data-testid="content" id="content"></div>
     <footer-component></footer-component>
-    <script src="/src/router.js" type="module"></script>
   </body>
 </html>

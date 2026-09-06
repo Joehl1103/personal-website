@@ -1,3 +1,4 @@
+import headshot from "/src/assets/hdsht.jpg";
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
@@ -30,7 +31,7 @@ export default class extends AbstractView {
       </style>
       <h1 class="main-header">Home</h1>
       <div>
-        <img src="/assets/img/hdsht.jpg" width="100" alt="headshot"></img>
+        <img src="${headshot}" width="100" alt="headshot"></img>
         <h2><b>Joseph Loomis</b></h2>
       </div>
         <div>
