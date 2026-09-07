@@ -23,8 +23,7 @@ test("expect heading nav and footer to be present on every page", async ({
     },
     blog: { "nav-link": "blog-link", "header-text": "Blog", route: "/blog" },
   };
-  console.log("baseURL", baseURL);
-  for (const [key, value] of Object.entries(pageData)) {
+  for (const value of Object.values(pageData)) {
     const { "nav-link": navLink, "header-text": headerText, route } = value;
     await page.getByTestId(navLink).click();
     const header = page.getByRole("heading", {
@@ -41,14 +40,13 @@ test("expect heading nav and footer to be present on every page", async ({
 });
 
 test("home page has headshot", async ({ page }) => {
-  const headshot = await page.getByAltText("headshot");
+  const headshot = page.getByAltText("headshot");
   await expect(headshot).toBeVisible();
 });
 
-test("all links on projects 200", async ({ page, baseURL }) => {
-  console.log("baseURL", baseURL);
+test("all links on projects 200", async ({ page }) => {
   await page.goto("/projects");
-  const mainHeader = await page.getByTestId("main-header");
+  const mainHeader = page.getByTestId("main-header");
   await expect(mainHeader).toHaveText("Projects");
   const content = page.getByTestId("content");
   const allLinks = await content.getByRole("link").all();
@@ -56,7 +54,7 @@ test("all links on projects 200", async ({ page, baseURL }) => {
     const text = await li.innerText();
     const href = await li.getAttribute("href");
     if (!href) {
-      console.log(`No link for ${text}`);
+      console.warn(`No link for ${text}`);
     }
     const res = await page.request.get(href);
     expect(res.ok()).toBe(true);

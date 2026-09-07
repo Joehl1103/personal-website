@@ -27,6 +27,8 @@ export default {
     ],
   },
   devServer: {
+    static: path.join(__dirname),
+    compress: true,
     port: 5001,
     historyApiFallback: true,
     hot: true,

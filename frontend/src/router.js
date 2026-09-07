@@ -45,11 +45,11 @@ async function router() {
   const { path } = match;
   const view = new match.view(path);
   const html = await view.getHtml();
+  const content = document.getElementById("content");
   content.innerHTML = html;
 }
 
 async function navigateTo(url) {
-  console.log("url", url);
   history.pushState(null, null, url);
   router();
 }
@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
     if (e.target.matches("[data-link]")) {
       e.preventDefault();
-      console.log("here");
       navigateTo(e.target.href);
     }
   });

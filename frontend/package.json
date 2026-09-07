@@ -10,11 +10,16 @@
     "dev": "webpack server --mode development",
     "build": "webpack --config webpack.config.js --mode production",
     "test:e2e": "npx playwright test",
-    "test:e2e:ui": "npx playwright test --ui"
+    "test:e2e:ui": "npx playwright test --ui",
+    "lint": "npx eslint"
   },
   "devDependencies": {
+    "@eslint/css": "^2.0.0",
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.2.0",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
     "html-webpack-plugin": "^5.6.8",
     "webpack": "^5.110.3",
     "webpack-cli": "^7.2.3",
