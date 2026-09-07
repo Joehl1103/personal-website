@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import globals from "globals";
 import css from "@eslint/css";
+import html from "@html-eslint/eslint-plugin";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
@@ -17,5 +18,14 @@ export default defineConfig([
     plugins: { css },
     language: "css/css",
     extends: ["css/recommended"],
+  },
+  {
+    files: ["**/*.html"],
+    ignores: ["**/dist/*.html"],
+    plugins: { html },
+    language: "html/html",
+    rules: {
+      "html/no-duplicate-class": "error",
+    },
   },
 ]);
