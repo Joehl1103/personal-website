@@ -76,7 +76,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: `PORT=3001 node server.js`,
-    cwd: "../",
+    cwd: import.meta.dirname,
     url: baseURL,
     reuseExistingServer: false,
     timeout: 120 * 1000,

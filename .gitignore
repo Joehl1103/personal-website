@@ -8,5 +8,6 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
+frontend/dist/
 notes.md
 .DS_Store
