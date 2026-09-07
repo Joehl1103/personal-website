@@ -1,6 +1,7 @@
 name: Deployement pipeline
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
