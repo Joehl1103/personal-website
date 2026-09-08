@@ -12,4 +12,5 @@ frontend/dist/
 frontend/node_modules
 
 notes.md
+!notes-2.md
 .DS_Store
