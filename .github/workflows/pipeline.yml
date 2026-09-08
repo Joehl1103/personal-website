@@ -46,7 +46,7 @@ jobs:
         working-directory: frontend
 
     steps:
-      - uses: actions/checkou@v6
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           node-version: "24"
@@ -96,6 +96,14 @@ jobs:
           rsync -rlpvz --delete \
           --chmod=D755,F644 \
           dist/ production:/var/www/personal-website/
+      - name: Notify
+        if: ${{ always() }}
+        uses: ./.github/actions/notify
+        with:
+          repo: Personal website
+          status: ${{ job.status }}
+          job-name: deploy_fe
+          discord-webhook: ${{ secrets.discord-webhook }}
 
       - name: Remove deploy credentials
         if: always()

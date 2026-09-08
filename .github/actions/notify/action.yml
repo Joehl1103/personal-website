@@ -1,0 +1,42 @@
+name: notification
+
+description: Discord notification
+
+inputs:
+  repo:
+    required: true
+  job-name:
+    required: true
+  status:
+    required: true
+  discord-webhook:
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v6
+    - if: ${{ inputs.job-name == 'deploy_fe' && inputs.status == 'success' }}
+      uses: sarisia/actions-status-discord@v1
+      with:
+        webhook: ${{ inputs.discord-webhook }}
+        status: ${{ inputs.status }}
+        content: |
+          ### ${{ inputs.repo }}
+          ✅ ** Build succeeded for ${{ inputs.job-name }}!
+        description: "notifies of build and deployment status"
+        color: 0x00FF2F
+        url: "https://github.com/sarisia/actions-status-discord"
+        username: GitHub Actions
+    - if: ${{ inputs.job-name == 'deploy-fe' && inputs.status == 'failure }}
+      uses: sarisia/actions-status-discord@v1
+      with:
+        webhook: ${{ inputs.discord-webhook }}
+        status: ${{ inputs.status }}
+        content: |
+          ### ${{ inputs.repo }}
+          ❌ ** Build failedfor ${{ inputs.job-name }}!
+        description: "notifies of build and deployment status"
+        color: 0xFF2A00
+        url: "https://github.com/sarisia/actions-status-discord"
+        username: GitHub Actions
