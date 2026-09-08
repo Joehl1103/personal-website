@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: actionlint
+        name: Check GitHub Actions workflows
+        entry: actionlint
+        language: system
+        files: ^\.github/workflows/.*\.ya?ml$
