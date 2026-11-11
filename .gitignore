@@ -2,6 +2,7 @@ notes.md
 
 # Playwright
 node_modules/
+frontend/node_modules/
 /test-results/
 /playwright-report/
 /blob-report/
