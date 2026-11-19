@@ -17,4 +17,6 @@ frontend/dist/
 frontend/node_modules
 
 notes.md
+plan.md
 .DS_Store
+*.swp
