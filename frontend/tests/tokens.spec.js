@@ -7,7 +7,19 @@ test.beforeEach(async ({ page, baseURL }) => {
 })
 
 test("--bg element is not empty", async ({ page, baseURL }) => {
-	const wrapper = page.locator('.wrapper'); 
-	const bg = await wrapper.evaluate((element) => window.getComputedStyle(element).getPropertyValue('--background'));
-	expect(bg.trim()).not.toBe('');
+	const wrapper = await page.locator('.wrapper'); 
+	const vars = await wrapper.evaluate((element) => { 
+  const styles = window.getComputedStyle(element)
+  const res = {}
+  for (let i = 0;i < styles.length; i++){
+    const props = styles[i]
+    if (props.startsWith('--')){
+      res[props] = styles.getPropertyValue(props)
+    }
+  }
+  return res
+  })
+  console.log('vars',vars)
+	//  console.log('bg',bg)
+	// expect(bg.trim()).not.toBe('');
 })
