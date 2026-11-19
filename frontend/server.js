@@ -17,6 +17,7 @@ if (fs.existsSync(distPath)){
 }
 
 // Sets root url
+app.use("/src/",express.static(path.resolve(frontend,"src")));
 app.use("/", express.static(dirPath));
 
 // for any path after root, serves index.html as the entry point

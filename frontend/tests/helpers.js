@@ -5,6 +5,11 @@ export async function goToRoot ( page, baseURL ){
     const url = res.url();
     const status = res.status();
     const statusText = res.statusText();
+    console.log({
+      url,
+      status,
+      statusText
+  })
     expect(url).toBe(`${baseURL}/`);
     expect(status).toBe(200);
     expect(statusText).toBe("OK");
