@@ -11,6 +11,7 @@ const dist = path.resolve(frontend, "dist");
 app.use("/", express.static(dist));
 
 app.get("{/*path}", (req, res) => {
+	//NOTE: serves dist and fall back to index.html if dist does not exist
   res.sendFile(path.resolve(dist, "index.html"));
 });
 
