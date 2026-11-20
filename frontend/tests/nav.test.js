@@ -14,3 +14,9 @@ test('has light and dark mode toggle',async( {page, baseURL }) => {
   await toggle.click()
   await expect(page.getByTestId('navbar').locator('[data-icon="sun"]')).toBeVisible();
 })
+
+test('toggling mode button toggles model', async ({ page, baseURL }) => {
+  await expect(page.locator('.wrapper')).toHaveCSS('background-color','rgb(255, 255, 255)');
+  await navBar.locator(".mode-toggle").click();
+  await expect(page.locator('.wrapper')).toHaveCSS('background-color','rgb(21, 22, 24)')
+})
