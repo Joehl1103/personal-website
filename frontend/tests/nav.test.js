@@ -9,12 +9,8 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 test('has light and dark mode toggle',async( {page, baseURL }) => {
-  console.log(await navBar.innerHTML())
-  console.log(iconClasses.dark_mode)
-  const toggle = await navBar.locator(`.${iconClasses.dark_mode}`);
-  console.log(await toggle.innerHTML())
-  expect(toggle).toBeVisible();
+  const toggle = await navBar.locator(".mode-toggle");
+  await expect(toggle.locator('[data-icon="moon"]')).toBeVisible();
   await toggle.click()
-  expect(await page.getTestId('navbar').locator(iconClasses.light_mode)).toBeVisible();
-
+  await expect(page.getByTestId('navbar').locator('[data-icon="sun"]')).toBeVisible();
 })
