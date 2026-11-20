@@ -1,5 +1,9 @@
 :root {
-  --bg: white;
+  --main-bg: white;
+  --nav-bg: #333;
+  --nav-hover-bg: #ddd;
+  --footer-bg: #ddd;
+  --main-font: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -10,7 +14,7 @@ html,
 body {
   box-sizing: border-box;
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--main-font);
   padding: 0;
   margin: 0;
 }
@@ -20,13 +24,13 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--bg);
+  background: var(--main-bg);
 }
 
 /* NAVBAR */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--nav-bg);
   flex-shrink: 0;
 }
 
@@ -44,7 +48,7 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: var(--nav-hover-bg);
   color: black;
 }
 
@@ -70,7 +74,7 @@ body {
   width: 100%;
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background: var(--footer-bg);
   flex-grow: 0;
   flex-shrink: 0;
 }
