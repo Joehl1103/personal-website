@@ -1,10 +1,25 @@
-//Font Awesome: https://fontawesome.com/
-const fa_linkedin = '<i class="fa-brands fa-linkedin"></i>';
-const fa_twitter = '<i class="fa-brands fa-square-x-twitter"></i>'
-const fa_github = '<i class="fa-brands fa-github"></i>'
+//Font Awesome: https://fontawesome.com/. Set up in index.html
+
+function generateFaIconElement(className){
+  return `<i class="${className}"></i>`;
+}
+
+const iconClasses = {
+  fa_linkedin: 'fa-brands fa-linkedin',
+  fa_twitter: 'fa-brands fa-square-x-twitter',
+  fa_github: 'fa-brands fa-github',
+  dark_mode: 'fa-solid fa-moon',
+  light_mode: 'fa-regular fa-sun',
+};
+
+const iconElements = Object.fromEntries(
+  Object.entries(iconClasses).map(([name, className]) => [
+    name,
+    generateFaIconElement(className),
+  ]),
+);
 
 export {
-  fa_linkedin,
-  fa_twitter,
-  fa_github
+  iconClasses,
+  iconElements,
 }

@@ -29,9 +29,18 @@ body {
 
 /* NAVBAR */
 .navbar {
+  display: flex;
   overflow: hidden;
   background-color: var(--nav-bg);
   flex-shrink: 0;
+}
+
+.mode-toggle {
+  all: unset;
+  margin-right: 10px;
+  margin-left: auto;
+  background: transparent;
+  cursor: pointer;
 }
 
 .navbar a {

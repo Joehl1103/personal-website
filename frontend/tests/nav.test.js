@@ -8,9 +8,9 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 test('has light and dark mode toggle',async( {page, baseURL }) => {
-  const toggle = await navBar.getByRole('button', { name: "Dark mode"});
+  const toggle = await navBar.locator('fa-light fa-brightness-low');
   expect(toggle).toBeVisible();
   await toggle.click()
-  expect(await page.getTestId('navbar').getByRole('button', { name: 'Light mode' })).toBeVisible()
+  expect(await page.getTestId('navbar').locator('.fa-solid fa-moon')).toBeVisible();
 
 })

@@ -1,4 +1,4 @@
-import { fa_github, fa_linkedin, fa_twitter } from "./icons.js";
+import { iconElements } from "./icons.js";
 
 class Socials extends HTMLElement {
   constructor() {
@@ -13,9 +13,9 @@ class Socials extends HTMLElement {
     this.innerHTML = `
     <div class="social">
       <div data-testid="socials" class="icons">
-        <a href="https://www.linkedin.com/in/jkhloomis/">${fa_linkedin}</a>
-        <a href="https://x.com/JosephLoom30487">${fa_twitter}</a>
-        <a href="https://github.com/Joehl1103">${fa_github}</a>
+        <a href="https://www.linkedin.com/in/jkhloomis/">${iconElements.fa_linkedin}</a>
+        <a href="https://x.com/JosephLoom30487">${iconElements.fa_twitter}</a>
+        <a href="https://github.com/Joehl1103">${iconElements.fa_github}</a>
       </div>
     </div>
   `;
