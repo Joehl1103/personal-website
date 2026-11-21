@@ -1,5 +1,6 @@
+@import "./styles/tokens.css";
+
 :root {
-  --main-bg: white;
   --nav-bg: #333;
   --nav-hover-bg: #ddd;
   --footer-bg: #ddd;

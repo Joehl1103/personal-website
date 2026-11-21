@@ -1,0 +1,24 @@
+@import "open-props/sand.min.css";
+@import "open-props/stone.min.css";
+
+:root {
+  color-scheme: light;
+  --main-bg: var(--sand-1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]){
+    color-scheme: light;
+    --main-bg: var(--sand-1);
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --main-bg: var(--sand-1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --main-bg: var(--stone-12);
+}

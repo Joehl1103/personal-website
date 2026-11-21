@@ -20,6 +20,8 @@ class Nav extends HTMLElement {
   }
 
   toggleMode = () => {
+    document.documentElement.dataset.theme = this.modeNext;
+    localStorage.setItem("theme",this.modeNext);
     this.modeNext = this.modeNext === 'light' ? 'dark' : 'light';
     this.querySelector(".mode-toggle").innerHTML = this.toggleIcon;
   }
