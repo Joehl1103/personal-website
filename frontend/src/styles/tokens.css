@@ -1,8 +1,10 @@
 @import "open-props/sand.min.css";
 @import "open-props/stone.min.css";
+@import "open-props/fonts.min.css";
 
 :root {
   color-scheme: light;
+  --main-font: var(--font-didone);
   --main-bg: var(--sand-1);
   --nav-footer-bg: var(--stone-10)
 }
