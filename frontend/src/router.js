@@ -1,8 +1,8 @@
 import Home from "/src/views/Home.js";
 import Projects from "/src/views/Projects.js";
 import Blog from "/src/views/Blog.js";
-import FourOFour from "/src/views/fourOfour.js"
 import { matchPathToView } from "./routerHelpers.js";
+import FourOFour from "./views/fourOfour.js";
 
 // NOTE: unnecessariy at the moment but I will have to figure out how to parse a url with multiple slashes and an id and return the url with the id once I have multiple elements linked on a single page.
 // function getParams(match) {
@@ -29,6 +29,7 @@ async function router() {
     { path: "/", view: Home },
     { path: "/projects", view: Projects },
     { path: "/blog", view: Blog },
+    { path: "/404", view: FourOFour}
   ];
 
   const match = matchPathToView(location.pathname,routes);
