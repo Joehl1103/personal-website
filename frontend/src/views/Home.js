@@ -31,7 +31,7 @@ export default class extends AbstractView {
       </style>
       <h1 class="main-header">Home</h1>
       <div>
-        <img src="${headshot}" width="100" alt="headshot"></img>
+        <img class="headshot" src="${headshot}" width="100" alt="headshot"></img>
         <h2><b>Joseph Loomis</b></h2>
       </div>
         <div>
