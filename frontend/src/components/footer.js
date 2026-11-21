@@ -15,9 +15,6 @@ class Footer extends HTMLElement {
             flex-direction: row;
             gap: 5px;
           }
-          .icons {
-            margin-top: 16px;
-          }
           a {
             color: inherit;
           }
