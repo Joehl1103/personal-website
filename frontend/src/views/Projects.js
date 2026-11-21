@@ -53,7 +53,7 @@ export default class extends AbstractView {
               data-description="it's just my website"
               data-stack="Vanilla, Web-Components"
               data-codeurl="https://github.com/Joehl1103/personal-website/tree/master"
-              data-demourl="coming soon"
+              data-demourl="false"
             ></project-component>
             <project-component
               data-title="Coin counter"
