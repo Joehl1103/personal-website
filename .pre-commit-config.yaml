@@ -6,3 +6,11 @@ repos:
         entry: actionlint
         language: system
         files: ^\.github/workflows/.*\.ya?ml$
+      - id: frontend-check
+        name: frontend lint and tests
+        entry: bash -c 'cd frontend && npm run lint && npm run test:e2e --reporter=null'
+        language: system
+        pass_filenames: false
+        files: ^frontend/
+        stages: [pre-push]
+
