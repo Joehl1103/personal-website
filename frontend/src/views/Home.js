@@ -26,8 +26,8 @@ export default class extends AbstractView {
               border: solid 1px;
             }
       </style>
+      <h1 class="main-headers">Home</h1>
       <div class="home-top">
-        <h1 class="main-header">Home</h1>
         <div>
           <img class="headshot" src="${headshot}" width="100" alt="headshot"></img>
           <h2><b>Joseph Loomis</b></h2>

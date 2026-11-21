@@ -31,9 +31,11 @@ class Nav extends HTMLElement {
     console.log('toggleIcon',toggleIcon)
     this.innerHTML = `
       <div data-testid="navbar" class="navbar">
-        <a href="/" data-link data-testid="home-link">Home</a>
-        <a href="/projects" data-link data-testid="projects-link">Projects</a>
-        <a href="/blog" data-link data-testid="blog-link">Blog</a>
+        <div class="menu">
+          <a href="/" data-link data-testid="home-link">Home</a>
+          <a href="/projects" data-link data-testid="projects-link">Projects</a>
+          <a href="/blog" data-link data-testid="blog-link">Blog</a>
+        </div>
         <button class="mode-toggle">${toggleIcon}</button>
       </div>
   `;

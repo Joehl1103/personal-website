@@ -12,15 +12,16 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-      <h1 class="main-header" data-testid="main-header">Projects</h1>
+      <h1 class="main-headers" data-testid="main-header">Projects</h1>
       <div>
-        <p>
-          You can find my full list of projects on my
-          <a href="https://github.com/Joehl1103">GitHub account</a>.
-        </p>
+        <div class="projects-intro">
+          <p>
+            You can find my full list of projects on my
+            <a href="https://github.com/Joehl1103">GitHub account</a>.
+          </p>
+        </div>
         <div>
-          <p>Here are some highlights:</p>
-          <h3>
+          <h3 class="project-headers">
             <a href="https://fullstackopen.com/en/">Full Stack Open Projects</a>
           </h3>
           <ul>
@@ -46,7 +47,7 @@ export default class extends AbstractView {
               data-demoUrl="https://fso-library-graphql.vercel.app/"
             ></project-component>
           </ul>
-          <h3>Personal Projects</h3>
+          <h3 class="project-headers">Personal Projects</h3>
           <ul>
             <project-component
               data-title="THIS WEBSITE!"
