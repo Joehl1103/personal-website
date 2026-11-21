@@ -1,6 +1,7 @@
 import Home from "/src/views/Home.js";
 import Projects from "/src/views/Projects.js";
 import Blog from "/src/views/Blog.js";
+import FourOFour from "/src/views/fourOfour.js"
 
 // NOTE: unnecessariy at the moment but I will have to figure out how to parse a url with multiple slashes and an id and return the url with the id once I have multiple elements linked on a single page.
 // function getParams(match) {
@@ -27,6 +28,7 @@ async function router() {
     { path: "/", view: Home },
     { path: "/projects", view: Projects },
     { path: "/blog", view: Blog },
+    { path: "/*", view: FourOFour }
     //TODO: add another view /* => 404 page
   ];
 
