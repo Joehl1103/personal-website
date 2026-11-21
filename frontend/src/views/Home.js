@@ -19,9 +19,6 @@ export default class extends AbstractView {
               flex-direction: row;
               gap: 5px;
             }
-            .icons {
-              margin-top: 16px;
-            }
             a {
               color: inherit;
             }
@@ -29,10 +26,12 @@ export default class extends AbstractView {
               border: solid 1px;
             }
       </style>
-      <h1 class="main-header">Home</h1>
-      <div>
-        <img class="headshot" src="${headshot}" width="100" alt="headshot"></img>
-        <h2><b>Joseph Loomis</b></h2>
+      <h1 class="main-headers">Home</h1>
+      <div class="home-top">
+        <div>
+          <img class="headshot" src="${headshot}" width="100" alt="headshot"></img>
+          <h2><b>Joseph Loomis</b></h2>
+        </div>
       </div>
         <div>
           <h3>Who am I?</h3>

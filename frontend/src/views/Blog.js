@@ -12,7 +12,7 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-      <h1 class="main-header">Blog</h1>
+      <h1 class="main-headers">Blog</h1>
       <p>Blog coming soon...</p>
   `;
   }
