@@ -1,6 +1,7 @@
 import Home from "/src/views/Home.js";
 import Projects from "/src/views/Projects.js";
 import Blog from "/src/views/Blog.js";
+import Post from "/src/views/Post.js";
 import { matchPathToView } from "./routerHelpers.js";
 import FourOFour from "./views/fourOfour.js";
 
@@ -29,6 +30,7 @@ async function router() {
     { path: "/", view: Home },
     { path: "/projects", view: Projects },
     { path: "/blog", view: Blog },
+    { path: "/blog/:slug", view: Post },
     { path: "/404", view: FourOFour}
   ];
 

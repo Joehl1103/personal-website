@@ -1,9 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { goToRoot } from "./helpers.js";
 
 let navBar;
-test.beforeEach(async ({ page, baseURL }) => {
-	await goToRoot(page,baseURL);
+test.beforeEach(async ({ page }) => {
+	await page.goto("/");
   navBar = await page.getByTestId('navbar')
 });
 
