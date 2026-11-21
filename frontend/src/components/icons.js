@@ -8,6 +8,7 @@ const iconClasses = {
   fa_linkedin: 'fa-brands fa-linkedin',
   fa_twitter: 'fa-brands fa-square-x-twitter',
   fa_github: 'fa-brands fa-github',
+  fa_substack: 'fa-brands fa-substack',
   dark_mode: 'fa-solid fa-moon',
   light_mode: 'fa-regular fa-sun',
 };
