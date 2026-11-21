@@ -1,3 +1,11 @@
+@import "./styles/tokens.css";
+
+:root {
+  --nav-hover-bg: #ddd;
+  --footer-bg: #ddd;
+  --main-font: Arial, Helvetica, sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,7 +14,7 @@ html,
 body {
   box-sizing: border-box;
   height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--main-font);
   padding: 0;
   margin: 0;
 }
@@ -16,13 +24,24 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-bg);
+  color: var(--main-text-color);
 }
 
 /* NAVBAR */
 .navbar {
+  display: flex;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--nav-footer-bg);
   flex-shrink: 0;
+}
+
+.mode-toggle {
+  all: unset;
+  margin-right: 10px;
+  margin-left: auto;
+  background: transparent;
+  cursor: pointer;
 }
 
 .navbar a {
@@ -39,7 +58,7 @@ body {
 }
 
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: var(--nav-hover-bg);
   color: black;
 }
 
@@ -65,9 +84,9 @@ body {
   width: 100%;
   padding: 20px;
   text-align: center;
-  background: #ddd;
   flex-grow: 0;
   flex-shrink: 0;
+  background-color: var(--nav-footer-bg);
 }
 #content {
   margin: 10px;

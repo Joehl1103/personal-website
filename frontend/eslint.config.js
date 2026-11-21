@@ -18,6 +18,9 @@ export default defineConfig([
     plugins: { css },
     language: "css/css",
     extends: ["css/recommended"],
+    rules: {
+      "css/no-invalid-properties": ["error", { allowUnknownVariables: true }]
+    }
   },
   {
     files: ["**/*.html"],

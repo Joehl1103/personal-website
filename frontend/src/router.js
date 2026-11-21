@@ -27,6 +27,7 @@ async function router() {
     { path: "/", view: Home },
     { path: "/projects", view: Projects },
     { path: "/blog", view: Blog },
+    //TODO: add another view /* => 404 page
   ];
 
   const potentialMatches = routes.map((r) => {

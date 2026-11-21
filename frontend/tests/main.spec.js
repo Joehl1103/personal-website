@@ -1,13 +1,8 @@
 import { test, expect } from "@playwright/test";
+import { goToRoot } from "./helpers.js";
 
 test.beforeEach(async ({ page, baseURL }) => {
-  const res = await page.goto("/");
-  const url = res.url();
-  const status = res.status();
-  const statusText = res.statusText();
-  expect(url).toBe(`${baseURL}/`);
-  expect(status).toBe(200);
-  expect(statusText).toBe("OK");
+	await goToRoot(page,baseURL);
 });
 
 test("expect heading nav and footer to be present on every page", async ({
