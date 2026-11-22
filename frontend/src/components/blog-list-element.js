@@ -11,6 +11,7 @@ class BlogListElement extends HTMLElement {
   handleEvent(event){
     if(event.type === 'click'){
       const { slug } = event.currentTarget.dataset;
+      window.location.assign(`/blog/${slug}`)
     }
   }
 
@@ -21,7 +22,7 @@ class BlogListElement extends HTMLElement {
     this.date = this.dataset.date;
 
     this.innerHTML = `
-      <div id="${this.id}" data-testid=${this.slug}>
+      <a id="${this.id}" data-testid=${this.slug}>
         <div style="margin: 10px 0 20px 0; display: grid; grid-template-columns: auto 1fr auto; font-size: 15px">
           <span style="justify-self: start">${this.title}</span>
           <span style="justify-self: end">${this.date}</span>
