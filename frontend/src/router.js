@@ -5,26 +5,6 @@ import Post from "/src/views/Post.js";
 import { matchPathToView } from "./routerHelpers.js";
 import FourOFour from "./views/fourOfour.js";
 
-// NOTE: unnecessariy at the moment but I will have to figure out how to parse a url with multiple slashes and an id and return the url with the id once I have multiple elements linked on a single page.
-// function getParams(match) {
-//   console.group("getParams");
-//   console.log("match", match);
-//   const values = match.result.slice(0);
-//   //NOTE: this seems unnecessarily complicated. Why match all and the only return the first?
-//   console.log("values", values);
-//   const keys = Array.from(
-//     match.route.path.matchAll(/:(\w+)/g).map((result) => result[1]),
-//   );
-//   console.log("keys", keys);
-//   const out = Object.fromEntries(keys.map((key, i) => [key, values[i]]));
-//   console.log("out", Object.entries(out));
-//   console.groupEnd("getParams");
-//   return out;
-// }
-// function pathRegex(path) {
-//   return new RegExp(`^${path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)")}$`);
-// }
-
 async function router() {
   const routes = [
     { path: "/", view: Home },
@@ -33,6 +13,26 @@ async function router() {
     { path: "/blog/:slug", view: Post },
     { path: "/404", view: FourOFour}
   ];
+
+  for (const route of routes){
+    console.log('route',route)
+    const paramNames = [];
+    const regex = new RegExp("^" + route.path.replace(/:(\w+)/g, (_,name) => {
+      paramNames.push(name);
+      return "([^/]+)";
+    }) + "$")
+    console.log('regex',regex)
+    console.log('paramNames',paramNames)
+    const match = location.pathname.match(regex)
+    console.log('match',match)
+    if(match){
+      const params = {};
+      paramNames.forEach((name,i) => {
+        params[name] = match[i + 1]
+      })
+      console.log('params',params)
+    }
+  }
 
   const match = matchPathToView(location.pathname,routes);
   const { path } = match;
