@@ -12,3 +12,10 @@ test("goto blogs displays list of blogs", async ( { page }) => {
   await expect(separators.length).toBeGreaterThan(1);
 });
 
+test("clicking on a blog in list redirects to post page", async ( { page } ) => {
+  const blogList = page.getByTestId("hello-world");
+  await blogList.click();
+  const url = page.url();
+  expect(url).toContain("/hello-world");
+})
+
