@@ -20,19 +20,13 @@ export default class extends AbstractView {
       </div>
       <hr>
       <div>
-        ${manifest.map((m,i) => {
-            return `
-            <div id="${i}" data-testid=${m.slug}>
-              <div style="margin: 10px 0 20px 0; display: grid; grid-template-columns: auto 1fr auto; font-size: 15px">
-                <span style="justify-self: start">${m.title}</span>
-                <span style="justify-self: end">${m.date}</span>
-              </div>
-              <hr style="border: none; border-top:1px solid">
-            </div>
-          `
-        })}
-      </div
-      <!--TODO: center-->
+        ${manifest.map((m,i) => `<blog-list-element 
+          data-id="${i}"
+          data-title="${m.title}"
+          data-slug="${m.slug}"
+          data-date="${m.date}"
+          ></blog-list-element>`)}
+      </div>
       <div style="text-align: center;">
       <p style="font-size: 12px"><i>Substack</i> <a href="https://substack.com/@jkhloomis">${iconElements.fa_substack}</a></p>
       </div>

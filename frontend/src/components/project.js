@@ -7,6 +7,18 @@ class Project extends HTMLElement {
     this.render();
   }
 
+  setLiveDemo(demoUrl) {
+      const comingSoon = demoUrl === "coming soon";
+      const noDemo = demoUrl === "false";
+      if (/^https/.test(demoUrl)) {
+        return `| <a href="${demoUrl}">Live Demo</a>`;
+      } else if (comingSoon) {
+        return `| live demo coming soon`;
+      } else if (noDemo) {
+        return "";
+      }
+    }
+
   render() {
     this.title = this.dataset.title;
     this.description = this.dataset.description;
@@ -24,17 +36,6 @@ class Project extends HTMLElement {
   `;
   }
 
-  setLiveDemo(demoUrl) {
-    const comingSoon = demoUrl === "coming soon";
-    const noDemo = demoUrl === "false";
-    if (/^https/.test(demoUrl)) {
-      return `| <a href="${demoUrl}">Live Demo</a>`;
-    } else if (comingSoon) {
-      return `| live demo coming soon`;
-    } else if (noDemo) {
-      return "";
-    }
-  }
 }
 
 customElements.define("project-component", Project);
