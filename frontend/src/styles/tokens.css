@@ -4,7 +4,8 @@
 
 :root {
   color-scheme: light;
-  --main-font: var(--font-didone);
+  --body-font: var(--font-transitional);
+  --header-font: var(--font-didone);
   --main-bg: var(--sand-1);
   --nav-footer-bg: var(--stone-10);
   --nav-hover-bg: #ddd;

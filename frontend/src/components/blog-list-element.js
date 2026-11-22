@@ -23,10 +23,10 @@ class BlogListElement extends HTMLElement {
 
     this.innerHTML = `
       <a id="${this.id}" data-testid=${this.slug}>
-        <div class="blog-list-element">
-          <span class="blog-list-title">${this.title}</span>
-          <span class="blog-list-date">${this.date}</span>
-        </div>
+        <p class="blog-list-element">
+          <p class="blog-list-title">${this.title}</p>
+          <p class="blog-list-date">${this.date}</p>
+        </p>
         <hr class="blog-list-hr">
       </div>
     `
