@@ -25,7 +25,7 @@ export default class extends AbstractView {
       const html = mdToHTML(body)
       console.log('html',html)
       return `
-        <a href="/blog" class="post-back-arrow">${iconElements.left_arrow}</>
+        <a href="/blog" class="post-back-arrow">${iconElements.left_arrow}<a/>
         <h1 class="post-title">${meta.title}</h1>
         <h3 class="post-date"><i>${meta.date}</i></h3>
         <div class="post-content">${html}</div>
