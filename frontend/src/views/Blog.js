@@ -1,6 +1,7 @@
 import AbstractView from "./AbstractView.js";
 import manifest from "../content/blog/tempManifest.js";
 import { iconElements } from "../components/helpers/icons.js";
+import constants from "../constants.js";
 
 export default class extends AbstractView {
   constructor() {
@@ -28,7 +29,7 @@ export default class extends AbstractView {
           ></blog-list-element>`)}
       </div>
       <div style="text-align: center;">
-      <p style="font-size: 12px"><i>Substack</i> <a href="https://substack.com/@jkhloomis">${iconElements.fa_substack}</a></p>
+      <p class="blog-list-substack" ><i>Substack</i> <a href="${constants.SUBSTACK}">${iconElements.fa_substack}</a></p>
       </div>
   `;
   }
