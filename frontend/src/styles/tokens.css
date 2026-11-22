@@ -9,6 +9,7 @@
   --main-bg: var(--sand-1);
   --nav-footer-bg: var(--stone-10);
   --nav-hover-bg: #ddd;
+  --hover-color: var(--sand-10)
 }
 
 @media (prefers-color-scheme: light) {

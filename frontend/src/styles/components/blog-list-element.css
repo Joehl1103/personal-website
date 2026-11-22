@@ -4,6 +4,10 @@
   grid-template-columns: auto 1fr auto; 
 }
 
+.blog-list-element:hover {
+  background-color: var(--hover-color);
+}
+
 .blog-list-title {
   justify-self: start;
   font-size: 15px;
