@@ -25,7 +25,7 @@ export default class extends AbstractView {
       const html = mdToHTML(body)
       console.log('html',html)
       return `
-        <button class="back-arrow" style="all: unset;">${iconElements.left_arrow}</button>
+        <button class="back-arrow">${iconElements.left_arrow}</button>
         <h1 class="title">${meta.title}</h1>
         <h3 class="date"><i>${meta.date}</i></h3>
         <div class="post-content">${html}</div>

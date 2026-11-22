@@ -5,6 +5,14 @@
   font-size: 15px;
 }
 
+.blog-list-title {
+  justify-self: start;
+}
+
+.blog-list-date {
+  justify-self: end;
+}
+
 .blog-list-hr {
   border: none; 
   border-top:1px solid;

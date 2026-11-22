@@ -9,8 +9,6 @@ class Footer extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <style>
-    </style>
     <div class="footer">
       <socials-component class="socials-footer" data-testid="footer-socials"></socials-component>
     </div>
