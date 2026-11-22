@@ -10,7 +10,7 @@ export default {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "auto",
+    publicPath: "/",
     clean: true,
   },
   plugins: [

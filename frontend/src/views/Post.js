@@ -11,8 +11,16 @@ export default class extends AbstractView {
   }
 
   getHtml(){
+    const pathnameMatch = location.pathname.match(/^\/[^/]+\/(.+)$/);
+    if(pathnameMatch[1]){
+      this.slug = pathnameMatch[1];
+      console.log('this.slug',this.slug)
+      return `
+        <p>Hello world!</p>
+      `
+    }
     return `
-
+      <p>Unable to parse the pathname into a slug.</p>
     `
   }
 }
