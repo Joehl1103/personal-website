@@ -9,4 +9,4 @@ x_link: https://x.com/JosephLoom30487/status/2122838619027083373?a=7T-Fiwjh1G11N
 substack_link: https://substack.com/@jkhloomis/note/c-390050502?r=359mbd&utm_source=notes-share-action&utm_medium=web
 linkedin_link: https://lnkd.in/p/gzdaAnh7
 ---
-hello world!
+hello world

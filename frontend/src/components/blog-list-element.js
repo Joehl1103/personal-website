@@ -23,11 +23,11 @@ class BlogListElement extends HTMLElement {
 
     this.innerHTML = `
       <a id="${this.id}" data-testid=${this.slug}>
-        <div style="margin: 10px 0 20px 0; display: grid; grid-template-columns: auto 1fr auto; font-size: 15px">
+        <div class="blog-list-element">
           <span style="justify-self: start">${this.title}</span>
           <span style="justify-self: end">${this.date}</span>
         </div>
-        <hr style="border: none; border-top:1px solid">
+        <hr class="blog-list-hr">
       </div>
     `
   }

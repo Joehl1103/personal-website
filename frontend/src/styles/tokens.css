@@ -6,7 +6,8 @@
   color-scheme: light;
   --main-font: var(--font-didone);
   --main-bg: var(--sand-1);
-  --nav-footer-bg: var(--stone-10)
+  --nav-footer-bg: var(--stone-10);
+  --nav-hover-bg: #ddd;
 }
 
 @media (prefers-color-scheme: light) {

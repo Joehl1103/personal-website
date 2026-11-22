@@ -10,20 +10,9 @@ class Footer extends HTMLElement {
   render() {
     this.innerHTML = `
     <style>
-          .social {
-            display: flex;
-            flex-direction: row;
-            gap: 5px;
-          }
-          a {
-            color: inherit;
-          }
-          img {
-            border: solid 1px;
-          }
     </style>
     <div class="footer">
-      <socials-component data-testid="footer-socials"></socials-component>
+      <socials-component class="socials-footer" data-testid="footer-socials"></socials-component>
     </div>
   `;
   }

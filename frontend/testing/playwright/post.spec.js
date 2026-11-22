@@ -9,7 +9,6 @@ test("post display post title, date, content, arrow and view on", async ({ page 
   const separators = await page.getByRole("separator").all();
   expect(separators.length).toBe(1);
   const viewOn = page.locator('.view-on');
-  console.log(await viewOn.innerHTML())
   const viewOnLinks = await viewOn.getByRole("link").all();
   expect(viewOnLinks.length).toBe(3);
   for (const li of viewOnLinks){

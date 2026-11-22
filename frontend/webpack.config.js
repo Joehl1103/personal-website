@@ -27,6 +27,10 @@ export default {
       {
         test: /\.md$/,
         use: "raw-loader"
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader","css-loader"]
       }
     ],
   },
