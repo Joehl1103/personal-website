@@ -11,6 +11,7 @@ const iconClasses = {
   fa_substack: 'fa-brands fa-substack',
   dark_mode: 'fa-solid fa-moon',
   light_mode: 'fa-regular fa-sun',
+  left_arrow: "fa-solid fa-angle-left"
 };
 
 const iconElements = Object.fromEntries(

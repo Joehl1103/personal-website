@@ -1,5 +1,6 @@
 import { mdToHTML, parseFrontmatter } from "../content/utils/markdown.js";
 import AbstractView from "./AbstractView.js";
+import { iconElements } from "../components/icons.js";
 
 export default class extends AbstractView {
   constructor(){
@@ -23,7 +24,14 @@ export default class extends AbstractView {
       console.log('body',body)
       const html = mdToHTML(body)
       console.log('html',html)
-      return html
+      return `
+        <button style="all: unset;">${iconElements.left_arrow}</button>
+        <h1>${meta.title}</h1>
+        <h3><i>${meta.date}</i></h3>
+        ${html}
+        <hr>
+        <p>View on Substack, Linkedin, X</p>
+      `
     }
     return `
       <p>Unable to parse the pathname into a slug.</p>
