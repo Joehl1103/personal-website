@@ -23,6 +23,7 @@
   margin-left: auto;
   background: transparent;
   cursor: pointer;
+  color: var(--mode-toggle);
 }
 
 .navbar a {

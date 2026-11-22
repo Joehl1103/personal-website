@@ -13,6 +13,7 @@ body {
 
 h {
   font-family: var(--header-font);
+  color: var(--header-font-color);
 }
 
 p,a,span,li {
