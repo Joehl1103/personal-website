@@ -1,6 +1,6 @@
 import { mdToHTML, parseFrontmatter } from "../content/utils/markdown.js";
 import AbstractView from "./AbstractView.js";
-import { iconElements } from "../components/icons.js";
+import { iconElements } from "../components/helpers/icons.js";
 
 export default class extends AbstractView {
   constructor(){

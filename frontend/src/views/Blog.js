@@ -1,6 +1,6 @@
 import AbstractView from "./AbstractView.js";
 import manifest from "../content/blog/tempManifest.js";
-import { iconElements } from "../components/icons.js";
+import { iconElements } from "../components/helpers/icons.js";
 
 export default class extends AbstractView {
   constructor() {

@@ -1,4 +1,4 @@
-import { iconElements } from "./icons.js";
+import { iconElements } from "./helpers/icons.js";
 
 class Nav extends HTMLElement {
   
