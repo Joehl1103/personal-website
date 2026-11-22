@@ -18,4 +18,3 @@ test("clicking on a blog in list redirects to post page", async ( { page } ) => 
   const url = page.url();
   expect(url).toContain("/hello-world");
 })
-

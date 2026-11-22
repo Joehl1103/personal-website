@@ -24,6 +24,10 @@ export default {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.md$/,
+        use: "raw-loader"
+      }
     ],
   },
   devServer: {
