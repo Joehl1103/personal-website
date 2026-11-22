@@ -1,3 +1,12 @@
-.back-arrow {
+.post-back-arrow {
   all: unset;
+}
+
+.post-title {
+  margin-bottom: 0px;
+}
+
+.post-date {
+  margin-top: 10px;
+  font-size: 15px;
 }
