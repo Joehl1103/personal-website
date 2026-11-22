@@ -25,12 +25,12 @@ export default class extends AbstractView {
       const html = mdToHTML(body)
       console.log('html',html)
       return `
-        <button style="all: unset;">${iconElements.left_arrow}</button>
-        <h1>${meta.title}</h1>
-        <h3><i>${meta.date}</i></h3>
-        ${html}
+        <button class="back-arrow" style="all: unset;">${iconElements.left_arrow}</button>
+        <h1 class="title">${meta.title}</h1>
+        <h3 class="date"><i>${meta.date}</i></h3>
+        <div class="post-content">${html}</div>
         <hr>
-        <p>View on Substack, Linkedin, X</p>
+        <p class="view-on">View on <a href="${meta.substack_link}">Substack</a>, <a href="${meta.linkedin_link}">Linkedin</a>, <a href="${meta.x_link}">X</a></p>
       `
     }
     return `
