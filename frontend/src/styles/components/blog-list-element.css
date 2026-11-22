@@ -1,16 +1,17 @@
 .blog-list-element {
-  margin: 10px 0 20px 0; 
+  margin: 5px 0 10px 0; 
   display: grid; 
   grid-template-columns: auto 1fr auto; 
-  font-size: 15px;
 }
 
 .blog-list-title {
   justify-self: start;
+  font-size: 15px;
 }
 
 .blog-list-date {
   justify-self: end;
+  font-size: 13px;
 }
 
 .blog-list-hr {
