@@ -25,8 +25,9 @@ export default {
         type: "asset/resource",
       },
       {
-        test: /\.md$/,
-        use: "raw-loader"
+        test: /\.md$/i,
+        resourceQuery: /raw/,
+        type: "asset/source",
       },
       {
         test: /\.css$/i,
