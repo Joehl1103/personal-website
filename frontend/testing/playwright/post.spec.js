@@ -1,7 +1,11 @@
 import { test, expect } from "@playwright/test";
+import manifest from "../../src/content/manifest.json" with { type: 'json' };
 
 test("post display post title, date, content, arrow and view on", async ({ page }) => {
-  await page.goto('/blog/hello-world') 
+  const firstItem = manifest[0]
+  await page.goto(`/blog/${firstItem.slug}`) 
+  const backArrow = await page.locator('.post-back-arrow')
+  console.log(await backArrow.innerHTML())
   await expect(page.locator('.post-back-arrow')).toBeVisible();
   await expect(page.locator(".post-title")).toBeVisible();
   await expect(page.locator('.post-content')).toBeVisible();
