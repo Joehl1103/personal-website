@@ -13,19 +13,6 @@ export default class extends AbstractView {
 
   async getHtml() {
     return `
-      <style>
-            .social {
-              display: flex;
-              flex-direction: row;
-              gap: 5px;
-            }
-            a {
-              color: inherit;
-            }
-            img {
-              border: solid 1px;
-            }
-      </style>
       <h1 class="main-headers">Home</h1>
       <div class="home-top">
         <div>

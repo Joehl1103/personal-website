@@ -1,3 +1,4 @@
+import { iconElements } from "../components/helpers/icons.js";
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
@@ -13,7 +14,7 @@ export default class extends AbstractView {
   async getHtml() {
     return `
       <h1 class="main-headers" data-testid="main-header">Projects</h1>
-      <div>
+      <div class="projects-main">
         <div class="projects-intro">
           <p>
             You can find my full list of projects on my
@@ -21,9 +22,10 @@ export default class extends AbstractView {
           </p>
         </div>
         <div>
-          <h3 class="project-headers">
-            <a href="https://fullstackopen.com/en/">Full Stack Open Projects</a>
-          </h3>
+            <h3 class="project-headers">
+              <span>Full Stack Open Projects</span>
+              <a href="https://fullstackopen.com/en/">${iconElements.arrow_link}</a>
+            </h3>
           <ul>
             <project-component
               data-title="Patientor"

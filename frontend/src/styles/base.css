@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  /* font-family: var(--main-font); */
+  padding: 0;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--header-font);
+  color: var(--header-font-color);
+}
+
+p,a,span,li {
+  font-family: var(--body-font)
+}

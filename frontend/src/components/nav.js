@@ -1,4 +1,4 @@
-import { iconElements } from "./icons.js";
+import { iconElements } from "./helpers/icons.js";
 
 class Nav extends HTMLElement {
   
@@ -28,7 +28,6 @@ class Nav extends HTMLElement {
 
   render() {
     const toggleIcon = this.modeNext === 'light' ? this.lightModeIcon : this.darkModeIcon;
-    console.log('toggleIcon',toggleIcon)
     this.innerHTML = `
       <div data-testid="navbar" class="navbar">
         <div class="menu">

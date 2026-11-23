@@ -8,8 +8,13 @@ const iconClasses = {
   fa_linkedin: 'fa-brands fa-linkedin',
   fa_twitter: 'fa-brands fa-square-x-twitter',
   fa_github: 'fa-brands fa-github',
+  fa_substack: 'fa-brands fa-substack',
   dark_mode: 'fa-solid fa-moon',
   light_mode: 'fa-regular fa-sun',
+  left_arrow: "fa-solid fa-angle-left",
+  arrow_link: "fa-solid fa-arrow-up-right-from-square",
+  stack: "fa-solid fa-layer-group",
+  code: "fa-solid fa-code"
 };
 
 const iconElements = Object.fromEntries(

@@ -1,0 +1,14 @@
+.headshot {
+  width: 150px;
+  height: 150px;
+  object-fit:cover;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .home-top {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}

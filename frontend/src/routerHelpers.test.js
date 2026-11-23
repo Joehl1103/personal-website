@@ -1,6 +1,7 @@
 import {test,expect} from "vitest";
 import { matchPathToView } from "./routerHelpers.js";
 import Home from "./views/Home.js";
+import Post from "./views/Post.js";
 import FourOFour from "./views/fourOfour.js";
 
 test("valid route matches route",() => {
@@ -14,4 +15,9 @@ test("invalid route returns 404", () => {
     { path: "/404", view: FourOFour }
   ])
   expect(match.path).toBe("/404")
+})
+
+test('blog path with slug should return post', () => {
+  const match = matchPathToView("/blog/hello-world",[{path: "/blog/:slug", view: Post }])
+  expect(match.view).toBe(Post)
 })

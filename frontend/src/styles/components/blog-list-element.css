@@ -1,0 +1,38 @@
+.blog-list-element {
+  margin: 5px 0 10px 0; 
+  display: grid; 
+  grid-template-columns: auto 1fr auto; 
+  padding: 12px 0 0;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.blog-list-element:hover {
+  background-color: var(--hover-color);
+}
+
+.blog-list-date,.blog-list-title {
+  margin: 0;
+}
+
+.blog-list-title {
+  justify-self: start;
+  padding-left: 8px;
+  font-size: 15px;
+}
+
+.blog-list-date {
+  justify-self: end;
+  padding-right: 8px;
+  font-size: 13px;
+}
+
+.blog-list-hr {
+  grid-column: 1 / -1;
+  margin: 12px 0 0;
+  border: none; 
+  border-top:1px solid;
+  width: 100%;
+}

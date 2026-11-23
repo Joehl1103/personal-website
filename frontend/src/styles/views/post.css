@@ -1,0 +1,27 @@
+@import "open-props/yellow.min.css";
+
+.post-back-arrow {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  transform-origin: center;
+}
+
+.post-back-arrow:active {
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  0% { color: inherit; }
+  50% { color: var(--yellow-8); }
+  100% { color: inherit; }
+}
+
+.post-title {
+  margin-bottom: 0px;
+}
+
+.post-date {
+  margin-top: 10px;
+  font-size: 15px;
+}

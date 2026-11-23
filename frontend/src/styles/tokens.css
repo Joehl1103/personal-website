@@ -1,29 +1,29 @@
 @import "open-props/sand.min.css";
 @import "open-props/stone.min.css";
+@import "open-props/blue.min.css";
+@import "open-props/brown.min.css";
 @import "open-props/fonts.min.css";
 
 :root {
   color-scheme: light;
-  --main-font: var(--font-didone);
+  --body-font: var(--font-classical-humanist);
+  --header-font: var(--font-didone);
   --main-bg: var(--sand-1);
-  --nav-footer-bg: var(--stone-10)
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]){
-    color-scheme: light;
-    --main-bg: var(--sand-1);
-    --main-text-color: var(--sand-10)
-  }
-}
-
-:root[data-theme="light"] {
-  color-scheme: light;
-  --main-bg: var(--sand-1);
+  --main-text-color: var(--sand-10);
+  --hover-color: var(--sand-2);
+  --link-hover-color: var(--blue-12);
+  --header-font-color: var(--blue-12);
+  --nav-footer-bg: var(--stone-10);
+  --nav-hover-bg: #ddd;
+  --icon-color: black;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
   --main-bg: var(--sand-11);
   --main-text-color: var(--stone-4);
+  --hover-color: var(--sand-10);
+  --link-hover-color: var(--brown-1);
+  --icon-color: inherit;
+  --header-font-color: var(--sand-1);
 }
