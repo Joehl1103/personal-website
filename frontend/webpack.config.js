@@ -2,7 +2,6 @@ import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const __dirname = import.meta.dirname;
-console.log(path.resolve(__dirname, "dist"));
 
 export default {
   mode: "production",

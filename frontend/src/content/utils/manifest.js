@@ -9,7 +9,6 @@ export async function generateFilePaths(dir){
 
 export async function generateManifest(dir){
   const entries = await generateFilePaths(dir);
-  console.log('entries',entries)
   const metas = []
   for (const e of entries){
     const raw = await readFile(`${path.join(dir,e)}`,'utf8'); 

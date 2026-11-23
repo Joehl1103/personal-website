@@ -15,7 +15,6 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    console.log('manifest',this.manifest)
     return `
       <div>
         <h1 class="main-headers">Blog</h1>
