@@ -1,3 +1,5 @@
+import {iconElements} from "./helpers/icons.js";
+
 class Project extends HTMLElement {
   constructor() {
     super();
@@ -27,10 +29,10 @@ class Project extends HTMLElement {
     this.demoUrl = this.dataset.demourl;
     let liveDemo = this.setLiveDemo(this.demoUrl);
     this.innerHTML = `
-    <li>
-      <b>${this.title}</b>, ${this.description}</br> <i>
-      ${this.stack}</i></br>
-      <a href="${this.codeUrl}">Code</a>
+    <li class="project-li">
+      <b>${this.title}</b>, ${this.description}</br> 
+      <span>${iconElements.stack}</span>&nbsp;<i>${this.stack}</i></br>
+      <span>${iconElements.code}</span>&nbsp;<a href="${this.codeUrl}">Code</a>
       ${liveDemo}
     </li>
   `;

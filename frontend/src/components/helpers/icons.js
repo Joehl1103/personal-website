@@ -12,7 +12,9 @@ const iconClasses = {
   dark_mode: 'fa-solid fa-moon',
   light_mode: 'fa-regular fa-sun',
   left_arrow: "fa-solid fa-angle-left",
-  arrow_link: "fa-solid fa-arrow-up-right-from-square"
+  arrow_link: "fa-solid fa-arrow-up-right-from-square",
+  stack: "fa-solid fa-layer-group",
+  code: "fa-solid fa-code"
 };
 
 const iconElements = Object.fromEntries(
