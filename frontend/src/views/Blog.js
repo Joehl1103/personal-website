@@ -18,7 +18,8 @@ export default class extends AbstractView {
     return `
       <div>
         <h1 class="main-headers">Blog</h1>
-        <p class="header-paragraph">text here about why a blog text here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blog</p>
+        <p class="header-paragraph">Below you will find my published writings and reflections. I strive to be as open and transparent on my thinking as humanly possible while maintaining professional integrity. I welcome feedback and thoughts. Comments on postings will be coming soon!</p>
+        <p>If you want to get in touch, feel free to reach out by <a href="mailto:jkhloomis@icloud.com">email</a>, or any of the socials linked in the footer!</p>
       </div>
       <hr>
       <div class="blog-links">
