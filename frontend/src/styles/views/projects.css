@@ -4,3 +4,7 @@
     text-align: center;
   }
 }
+
+.projects-main a:hover {
+  color: var(--link-hover-color);
+}
