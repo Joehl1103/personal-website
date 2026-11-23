@@ -1,7 +1,8 @@
-const BLOG_URL = "/src/content/blog/"
+import { readdir } from "fs/promises";
 
-export function generateFilePaths(dir){
-  
+export async function generateFilePaths(dir){
+  const entries = await readdir(dir, { withFileTypes: true }) 
+  return entries.map(entry => entry.name )
 }
 
 export function generateManifest(){
