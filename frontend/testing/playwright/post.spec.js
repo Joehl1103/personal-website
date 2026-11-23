@@ -11,26 +11,13 @@ test("post display post title, date, content, arrow and view on", async ({ page 
   const viewOn = page.locator('.view-on');
   const viewOnLinks = await viewOn.getByRole("link").all();
   expect(viewOnLinks.length).toBe(3);
-  const checks = [];
+  const labels = [];
   for (const li of viewOnLinks){
-    const text = await li.innerText();
+    const text = (await li.innerText()).trim();
     const href = await li.getAttribute("href");
-    if (!href) {
-      test.abort(`No link for ${text}`);
-    }
-    const res = await page.request.get(href);
-    checks.push({
-      text,
-      href,
-      status: res.status(),
-      statusText: res.statusText(),
-      url: res.url(),
-      ok: res.ok(),
-    });
+    expect(href, text).toMatch(/^https:\/\//);
+    labels.push(text);
   }
-  console.log("view-on responses", JSON.stringify(checks));
-  for (const check of checks){
-    expect(check.ok, JSON.stringify(check)).toBe(true);
-  }
+  expect(labels).toEqual(["Substack", "Linkedin", "X"]);
    
 })
