@@ -20,7 +20,7 @@ export default class extends AbstractView {
         <p class="header-paragraph">text here about why a blog text here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blogtext here about why a blog</p>
       </div>
       <hr>
-      <div>
+      <div class="blog-links">
         ${manifest.map((m,i) => `<blog-list-element 
           data-id="${i}"
           data-title="${m.title}"
