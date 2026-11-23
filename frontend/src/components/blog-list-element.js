@@ -13,7 +13,6 @@ class BlogListElement extends HTMLElement {
     this.slug = this.dataset.slug;
     this.title = this.dataset.title;
     this.date = this.dataset.date;
-    console.log(`/blog/${this.slug}`)
     this.innerHTML = `
       <div>
       <a id="${this.id}" href="/blog/${this.slug}" class="blog-list-element" data-testid=${this.slug}>

@@ -1,6 +1,6 @@
-import { readdir } from "fs/promises";
+import { readdir,readFile } from "node:fs/promises";
 import path from "node:path";
-import {parseFrontMatter} from "../utils/markdown";
+import {parseFrontMatter} from "../utils/markdown.js";
 
 export async function generateFilePaths(dir){
   const entries = await readdir(dir, { withFileTypes: true }) 
@@ -9,23 +9,13 @@ export async function generateFilePaths(dir){
 
 export async function generateManifest(dir){
   const entries = await generateFilePaths(dir);
+  console.log('entries',entries)
   const metas = []
   for (const e of entries){
-    const raw = await import(`${path.join(dir,e)}?raw`); 
-    const {meta } = parseFrontMatter(raw.default);
+    const raw = await readFile(`${path.join(dir,e)}`,'utf8'); 
+    const { meta } = parseFrontMatter(raw);
     metas.push(meta)
   }
   return metas
 }
 
-// export default [
-//   {
-//     title: "Hello World!",
-//     date: "2026-11-21",
-//     slug: "hello-world",
-//     excerpt: "A short summary used on the list page.",
-//     tags: ["vanilla", "blogging"],
-//     published: true
-//   }
-// ]
-//
