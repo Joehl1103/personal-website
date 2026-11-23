@@ -33,6 +33,7 @@
   "dependencies": {
     "express": "^5.2.1",
     "live-server": "^1.2.2",
+    "marked": "^18.2.1",
     "nodemon": "^3.1.14",
     "open-props": "^1.7.23",
     "playwright": "^1.63.0",
