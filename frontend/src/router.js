@@ -15,22 +15,17 @@ async function router() {
   ];
 
   for (const route of routes){
-    console.log('route',route)
     const paramNames = [];
     const regex = new RegExp("^" + route.path.replace(/:(\w+)/g, (_,name) => {
       paramNames.push(name);
       return "([^/]+)";
     }) + "$")
-    console.log('regex',regex)
-    console.log('paramNames',paramNames)
     const match = location.pathname.match(regex)
-    console.log('match',match)
     if(match){
       const params = {};
       paramNames.forEach((name,i) => {
         params[name] = match[i + 1]
       })
-      console.log('params',params)
     }
   }
 

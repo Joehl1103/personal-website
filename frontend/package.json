@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack server --mode development",
+    "prebuild": "node src/scripts/generateManifest.js",
     "build": "webpack --config webpack.config.js --mode production",
     "test:e2e": "npm run build && npx playwright test",
     "test:e2e:chromium:noreport": "npm run build && npx playwright test --project=chromium --reporter=null",

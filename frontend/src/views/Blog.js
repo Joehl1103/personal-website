@@ -1,12 +1,13 @@
 import AbstractView from "./AbstractView.js";
-import manifest from "../content/blog/tempManifest.js";
 import { iconElements } from "../components/helpers/icons.js";
 import constants from "../constants.js";
+import manifest from "../content/manifest.json";
 
 export default class extends AbstractView {
   constructor() {
     super();
     this.title = this.setTitle("Projects");
+    this.manifest = manifest;
   }
 
   getTitle() {
@@ -21,7 +22,7 @@ export default class extends AbstractView {
       </div>
       <hr>
       <div class="blog-links">
-        ${manifest.map((m,i) => `<blog-list-element 
+        ${this.manifest.map((m,i) => `<blog-list-element 
           data-id="${i}"
           data-title="${m.title}"
           data-slug="${m.slug}"
