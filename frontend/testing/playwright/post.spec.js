@@ -11,6 +11,7 @@ test("post display post title, date, content, arrow and view on", async ({ page 
   const viewOn = page.locator('.view-on');
   const viewOnLinks = await viewOn.getByRole("link").all();
   expect(viewOnLinks.length).toBe(3);
+  const checks = [];
   for (const li of viewOnLinks){
     const text = await li.innerText();
     const href = await li.getAttribute("href");
@@ -18,7 +19,18 @@ test("post display post title, date, content, arrow and view on", async ({ page 
       test.abort(`No link for ${text}`);
     }
     const res = await page.request.get(href);
-    expect(res.ok()).toBe(true);
+    checks.push({
+      text,
+      href,
+      status: res.status(),
+      statusText: res.statusText(),
+      url: res.url(),
+      ok: res.ok(),
+    });
+  }
+  console.log("view-on responses", JSON.stringify(checks));
+  for (const check of checks){
+    expect(check.ok, JSON.stringify(check)).toBe(true);
   }
    
 })
