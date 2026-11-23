@@ -1,12 +1,21 @@
 import { readdir } from "fs/promises";
+import path from "node:path";
+import {parseFrontMatter} from "../utils/markdown";
 
 export async function generateFilePaths(dir){
   const entries = await readdir(dir, { withFileTypes: true }) 
   return entries.map(entry => entry.name )
 }
 
-export function generateManifest(){
-  
+export async function generateManifest(dir){
+  const entries = await generateFilePaths(dir);
+  const metas = []
+  for (const e of entries){
+    const raw = await import(`${path.join(dir,e)}?raw`); 
+    const {meta } = parseFrontMatter(raw.default);
+    metas.push(meta)
+  }
+  return metas
 }
 
 // export default [
@@ -19,3 +28,4 @@ export function generateManifest(){
 //     published: true
 //   }
 // ]
+//

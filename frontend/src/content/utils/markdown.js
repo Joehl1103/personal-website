@@ -9,7 +9,7 @@ export function mdToHTML(md){
   return marked.parse(md);
 }
 
-export function parseFrontmatter(raw) {
+export function parseFrontMatter(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) {
     return { meta: {}, body: raw };
