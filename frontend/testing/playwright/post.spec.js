@@ -29,7 +29,7 @@ test("post images are files from the built site", async ({ page }) => {
   await expect(images).toHaveCount(3)
   const srcs = await images.evaluateAll((els) => els.map((el) => el.getAttribute("src")))
   for (const src of srcs) {
-    expect(src.startsWith("/blog/assets/")).toBe(true)
+    expect(src.startsWith("/assets/blog/")).toBe(true)
     const res = await page.request.get(src)
     expect(res.headers()["content-type"]).toContain("image/png")
     const body = await res.body()

@@ -19,7 +19,7 @@ function copyBlogAssets() {
             for (const name of fs.readdirSync(dir)) {
               if (!/\.(png|jpe?g|gif|svg)$/i.test(name)) continue;
               compilation.emitAsset(
-                `blog/assets/${name}`,
+                `assets/blog/${name}`,
                 new sources.RawSource(fs.readFileSync(path.join(dir, name)))
               );
             }
