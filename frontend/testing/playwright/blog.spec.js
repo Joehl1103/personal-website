@@ -20,7 +20,7 @@ test("clicking on a blog in list redirects to post page", async ( { page } ) => 
   expect(/blog\/[\w]+-?([\w-]+)?/.test(url)).toBe(true);
 })
 
-test.only("blog list displays only elements associated with blog posts with no stray characters", async ({ page }) =>{
+test("blog list displays only elements associated with blog posts with no stray characters", async ({ page }) =>{
   page.on('console', msg => console.log(msg))
   const elements = page.locator(".blog-links");
   console.log(await elements.innerHTML())

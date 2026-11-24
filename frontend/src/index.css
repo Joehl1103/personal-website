@@ -9,6 +9,7 @@
 @import "./styles/components/blog-list-element.css";
 @import "./styles/components/socials.css";
 @import "./styles/components/project.css";
+@import "./styles/components/post.css";
 
 /*Views*/
 @import "./styles/views/home.css";
