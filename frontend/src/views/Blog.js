@@ -15,13 +15,6 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    console.log('manifest',JSON.stringify(manifest))
-    console.log(JSON.stringify(this.manifest.map((m,i) => `<blog-list-element
-          data-id="${i}"
-          data-title="${m.title}"
-          data-slug="${m.slug}"
-          data-date="${m.date}"
-          ></blog-list-element>`)))
     return `
       <div>
         <h1 class="main-headers">Blog</h1>
