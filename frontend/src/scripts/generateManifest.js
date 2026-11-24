@@ -5,7 +5,6 @@ import path from "node:path";
 async function main(){
     const blogDirPath = path.resolve(import.meta.dirname,"..","content","blog","posts");
     const manifest = await generateManifest(blogDirPath);
-  console.log('manifest',manifest)
     const outputDir = path.resolve(import.meta.dirname,"..","content");
     await writeFile(path.join(outputDir,"manifest.json"),JSON.stringify(manifest));
 }

@@ -4,8 +4,6 @@ import manifest from "../../src/content/manifest.json" with { type: 'json' };
 test("post display post title, date, content, arrow and view on", async ({ page }) => {
   const firstItem = manifest[0]
   await page.goto(`/blog/${firstItem.slug}`) 
-  const backArrow = await page.locator('.post-back-arrow')
-  console.log(await backArrow.innerHTML())
   await expect(page.locator('.post-back-arrow')).toBeVisible();
   await expect(page.locator(".post-title")).toBeVisible();
   await expect(page.locator('.post-content')).toBeVisible();
@@ -22,4 +20,23 @@ test("post display post title, date, content, arrow and view on", async ({ page 
   }
   expect(labels).toEqual(["Substack", "Linkedin", "X"]);
    
+})
+
+test("post images are files from the built site", async ({ page }) => {
+  const firstItem = manifest[0]
+  await page.goto(`/blog/${firstItem.slug}`)
+  const images = page.locator(".post-content img")
+  await expect(images).toHaveCount(3)
+  const srcs = await images.evaluateAll((els) => els.map((el) => el.getAttribute("src")))
+  for (const src of srcs) {
+    expect(src.startsWith("/assets/blog/")).toBe(true)
+    const res = await page.request.get(src)
+    expect(res.headers()["content-type"]).toContain("image/png")
+    const body = await res.body()
+    expect(body.subarray(0, 8).toString("hex")).toBe("89504e470d0a1a0a")
+  }
+  for (const img of await images.all()) {
+    await expect(img).toBeVisible()
+    expect(await img.evaluate((el) => el.complete && el.naturalWidth > 0)).toBe(true)
+  }
 })
