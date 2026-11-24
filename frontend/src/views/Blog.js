@@ -23,12 +23,12 @@ export default class extends AbstractView {
       </div>
       <hr>
       <div class="blog-links">
-        ${this.manifest.map((m,i) => `<blog-list-element 
+        ${this.manifest.map((m,i) => `<blog-list-element
           data-id="${i}"
           data-title="${m.title}"
           data-slug="${m.slug}"
           data-date="${m.date}"
-          ></blog-list-element>`)}
+          ></blog-list-element>`).join("")}
       </div>
       <div class="blog-substack">
       <p class="blog-list-substack" ><i>Substack</i> <a href="${constants.SUBSTACK}">${iconElements.fa_substack}</a></p>
