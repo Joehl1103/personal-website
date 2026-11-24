@@ -14,19 +14,21 @@ test("goto blogs displays list of blogs", async ( { page }) => {
 });
 
 test("clicking on a blog in list redirects to post page", async ( { page } ) => {
-  const firstBlog = page.locator(".blog-links").first();
+  const firstBlog = page.locator(".blog-list-element").first();
   await firstBlog.click();
+  await page.waitForURL(/\/blog\/.+/)
   const url = page.url();
-  expect(/blog\/[\w]+-?([\w-]+)?/.test(url)).toBe(true);
+  console.log('url',url)
+  expect(/blog\/[\w\d]+-?([\w-\d]+)?/.test(url)).toBe(true);
 })
 
 test("blog list displays only elements associated with blog posts with no stray characters", async ({ page }) =>{
   page.on('console', msg => console.log(msg))
   const elements = page.locator(".blog-links");
-  console.log(await elements.innerHTML())
+  // console.log(await elements.innerHTML())
   expect(elements.locator("blog-list-element")).toHaveCount(manifest.length)
   const strayText = await elements.evaluate((el) => {
-    el.childNodes.forEach(cn => console.log(cn.toString()))
+    // el.childNodes.forEach(cn => console.log(cn.toString()))
     return [...el.childNodes]
       .filter((node) => node.nodeType === Node.TEXT_NODE)
       .map((node) => node.textContent.trim())
@@ -34,3 +36,4 @@ test("blog list displays only elements associated with blog posts with no stray 
   })
   expect(strayText).toEqual([]);
 })
+

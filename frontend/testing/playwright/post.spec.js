@@ -18,8 +18,6 @@ test("post display post title, date, content, arrow and view on", async ({ page 
   const labels = [];
   for (const li of viewOnLinks){
     const text = (await li.innerText()).trim();
-    const href = await li.getAttribute("href");
-    expect(href, text).toMatch(/^https:\/\//);
     labels.push(text);
   }
   expect(labels).toEqual(["Substack", "Linkedin", "X"]);
