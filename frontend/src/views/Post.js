@@ -16,9 +16,10 @@ export default class extends AbstractView {
     const pathnameMatch = location.pathname.match(/^\/[^/]+\/(.+)$/);
     if(pathnameMatch[1]){
       this.slug = pathnameMatch[1];
-      const raw = await import(`../content/blog/${this.slug}.md?raw`)
+      const raw = await import(`../content/blog/posts/${this.slug}.md?raw`)
       const { meta, body } = parseFrontMatter(raw.default)
       const html = mdToHTML(body)
+      console.log('html',html)
       return `
         <a href="/blog" class="post-back-arrow">${iconElements.left_arrow}<a/>
         <h1 class="post-title">${meta.title}</h1>
