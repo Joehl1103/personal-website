@@ -19,7 +19,6 @@ export default class extends AbstractView {
       const raw = await import(`../content/blog/posts/${this.slug}.md?raw`)
       const { meta, body } = parseFrontMatter(raw.default)
       const html = mdToHTML(body)
-      console.log('html',html)
       return `
         <a href="/blog" class="post-back-arrow">${iconElements.left_arrow}<a/>
         <h1 class="post-title">${meta.title}</h1>
