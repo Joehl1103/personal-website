@@ -6,24 +6,16 @@ const app = express();
 
 const __dirname = import.meta.dirname;
 const frontend = path.resolve(__dirname);
-let dirPath;
 const distPath = path.resolve(frontend, "dist");
-if (fs.existsSync(distPath)){
-  dirPath = distPath
-  console.log(`dist is present, serving dist directory ${dirPath}`)
-} else {
-  dirPath = path.resolve(__dirname)
-  console.log(`dist is NOT present, serving root directory ${dirPath}`)
-}
-
+if (!fs.existsSync(distPath)){
+  console.error("dist/ is missing. Run `npm run build`, or use `npm run dev` for local development.");
+} 
 // Sets root url
-app.use("/src/",express.static(path.resolve(frontend,"src")));
-app.use("/", express.static(dirPath));
+app.use(express.static(distPath));
 
 // for any path after root, serves index.html as the entry point
 app.get("{/*path}", (_req, res) => {
-  const htmlPath = path.resolve(dirPath,"index.html")
-  res.sendFile(htmlPath);
+  res.sendFile(path.join(distPath, "index.html"));
 });
 
 

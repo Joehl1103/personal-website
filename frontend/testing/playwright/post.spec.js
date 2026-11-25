@@ -23,12 +23,14 @@ test("post display post title, date, content, arrow and view on", async ({ page 
 })
 
 test("post images are files from the built site", async ({ page }) => {
-  const firstItem = manifest[0]
-  await page.goto(`/blog/${firstItem.slug}`)
+  page.on('console',msg => console.log(msg))
+  await page.goto(`/blog/2026-11-24-fso-rd`)
   const images = page.locator(".post-content img")
   await expect(images).toHaveCount(3)
   const srcs = await images.evaluateAll((els) => els.map((el) => el.getAttribute("src")))
+  console.log('srcs',srcs)
   for (const src of srcs) {
+    console.log('src',src)
     expect(src.startsWith("/assets/blog/")).toBe(true)
     const res = await page.request.get(src)
     expect(res.headers()["content-type"]).toContain("image/png")
