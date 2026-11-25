@@ -30,6 +30,32 @@ function copyBlogAssets() {
   };
 }
 
+function copyGeneralAssets() {
+  return {
+    apply(compiler) {
+      const { Compilation, sources } = compiler.webpack;
+      compiler.hooks.thisCompilation.tap("CopyGeneralAssets", (compilation) => {
+        compilation.hooks.processAssets.tap(
+          {
+            name: "CopyGeneralAssets",
+            stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
+          },
+          () => {
+            const dir = path.resolve(__dirname, "public/assets");
+            for (const name of fs.readdirSync(dir)) {
+              if (!/\.(png|jpe?g|gif|svg)$/i.test(name)) continue;
+              compilation.emitAsset(
+                `assets/${name}`,
+                new sources.RawSource(fs.readFileSync(path.join(dir, name)))
+              );
+            }
+          }
+        );
+      });
+    },
+  };
+}
+
 export default {
   mode: "production",
   entry: "./src/index.js",
@@ -44,6 +70,7 @@ export default {
       template: "./index.html",
     }),
     copyBlogAssets(),
+    copyGeneralAssets()
   ],
   module: {
     rules: [

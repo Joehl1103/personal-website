@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import manifest from "../../src/content/manifest.json" with { type: 'json' };
+import manifest from "../../../src/content/manifest.json" with { type: 'json' };
 
 test("post display post title, date, content, arrow and view on", async ({ page }) => {
   const firstItem = manifest[0]

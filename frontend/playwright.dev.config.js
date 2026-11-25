@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from "@playwright/test";
 
-const baseURL = `http://127.0.0.1:3001`;
+const baseURL = `http://127.0.0.1:5001`;
 
 /**
  * Read environment variables from file.
@@ -15,7 +15,7 @@ const baseURL = `http://127.0.0.1:3001`;
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "./testing/playwright",
+  testDir: "./testing/playwright/dev",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -53,14 +53,14 @@ export default defineConfig({
     },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
+    },
 
     /* Test against branded browsers. */
     // {
@@ -75,12 +75,13 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: `PORT=3001 node server.js`,
-    cwd: import.meta.dirname,
-    url: baseURL,
-    reuseExistingServer: false,
-    timeout: 120 * 1000,
-    stderr: "pipe",
-    stdout: "pipe",
-  },
+        name: "dev",
+        command: `npm run dev`,
+        cwd: import.meta.dirname,
+        url: baseURL,
+        reuseExistingServer: false,
+        timeout: 120 * 1000,
+        stderr: "pipe",
+        stdout: "pipe",
+  }
 });
