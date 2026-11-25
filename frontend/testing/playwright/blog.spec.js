@@ -32,3 +32,4 @@ test("blog list displays only elements associated with blog posts with no stray 
   })
   expect(strayText).toEqual([]);
 })
+

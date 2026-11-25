@@ -1,4 +1,4 @@
-import headshot from "/src/assets/hdsht.jpg";
+import headshot from "/public/assets/hdsht.jpg";
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {

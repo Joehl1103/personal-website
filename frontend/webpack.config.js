@@ -15,7 +15,7 @@ function copyBlogAssets() {
             stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
           },
           () => {
-            const dir = path.resolve(__dirname, "src/content/blog/assets");
+            const dir = path.resolve(__dirname, "public/assets/blog");
             for (const name of fs.readdirSync(dir)) {
               if (!/\.(png|jpe?g|gif|svg)$/i.test(name)) continue;
               compilation.emitAsset(
@@ -63,10 +63,13 @@ export default {
     ],
   },
   devServer: {
-    static: path.join(__dirname),
+    static: {
+      directory: path.join(__dirname, "public"),
+      publicPath: "/"
+    },
     compress: true,
     port: 5001,
     historyApiFallback: true,
     hot: true,
-  },
+  } 
 };

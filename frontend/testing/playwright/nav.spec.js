@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 let navBar;
 test.beforeEach(async ({ page }) => {
 	await page.goto("/");
-  navBar = await page.getByTestId('navbar')
+  navBar = page.getByTestId('navbar')
 });
 
 test('has light and dark mode toggle',async( {page }) => {
