@@ -1,4 +1,3 @@
-import headshot from "/public/assets/hdsht.jpg";
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
@@ -12,6 +11,7 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
+    const headshot = "/assets/hdsht.jpg";
     return `
       <h1 class="main-headers">Home</h1>
       <div class="home-top">

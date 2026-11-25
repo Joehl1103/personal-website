@@ -14,7 +14,7 @@ Task status is in OmniFocus, project **Build personal website**:
 
 [omnifocus:///project/hCbbihTG5fv](omnifocus:///project/hCbbihTG5fv)
 
-Read that project before proposing next steps. Do not mark OmniFocus tasks complete unless the owner asks.
+Do not consult OmniFocus for general code questions, explanations, or test-strategy advice. Consult it only when the owner explicitly asks to review project status or tasks, or when the request specifically depends on task sequencing. Do not mark OmniFocus tasks complete unless the owner asks.
 
 `plan.md` is the written plan for Part 1 (design system and visual refresh, test first). Treat OmniFocus as the checklist and `plan.md` as the design of that part. If they disagree, say so and ask. Do not silently reconcile them by editing either one.
 

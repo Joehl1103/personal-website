@@ -1,5 +1,5 @@
 import { test, expect} from "@playwright/test";
-import manifest from "../../src/content/manifest.json" with { type: 'json'};
+import manifest from "../../../src/content/manifest.json" with { type: 'json'};
 
 test.beforeEach(async ({ page }) => {
   await page.goto("/blog");
